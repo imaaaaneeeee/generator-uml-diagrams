@@ -14,10 +14,6 @@ public class Examples {
 		exp04();
 	}
 	
-	public void exp01() throws Exception {
-		ClassParser c = new ClassParser("org.mql.java.reflection.ClassParser");
-		c.infoClass();
-	}
 	
 	public void exp03() throws ClassNotFoundException, MalformedURLException{
 		
@@ -69,7 +65,6 @@ public void exp05() throws ClassNotFoundException, MalformedURLException{
 				try (URLClassLoader urlcl = new URLClassLoader(cp)) {
 					System.out.println("**************");
 					Class<?> myclass = urlcl.loadClass(cls);
-					//System.out.println(myclass);
 					System.out.println(myclass.getCanonicalName());
 					ClassParser parser = new ClassParser(myclass);
 					System.out.println(parser.getClassSimpleName());
