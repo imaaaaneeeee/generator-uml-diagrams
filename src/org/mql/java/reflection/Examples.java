@@ -40,8 +40,6 @@ public void exp04() throws ClassNotFoundException, MalformedURLException{
 		p.getClassList("C:\\Users\\Dell\\eclipse-workspace\\p05-Multithreading\\p05-Multithreading\\bin\\",pack,classlist);
 		for (String cls : classlist) {
 			p.getDetailClass("C:\\Users\\Dell\\eclipse-workspace\\p05-Multithreading\\p05-Multithreading\\bin\\", cls);
-			
-			
 		}
 	}
 	  
