@@ -6,8 +6,7 @@ import java.net.URLClassLoader;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PackageExplorer {
-	
+public class PackageExplorer {	
 
 	public PackageExplorer()  {	}
 	
@@ -60,8 +59,32 @@ public class PackageExplorer {
 					System.out.println("**************");
 					Class<?> myclass = urlcl.loadClass(className);
 					ClassParser parser = new ClassParser(myclass);
-					System.out.println(parser.getClassSimpleName());
+					System.out.println("Class Name : "+parser.getClassSimpleName());
 					System.out.println("class Modifier : " + parser.getClassModifier());
+					System.out.println("Super class : "+parser.getSuperClass());
+					System.out.println("chaire d'heritage : ");
+					String[]chaineHeritage = parser.getChaineHeritage();
+					for (int i = 0; i < chaineHeritage.length; i++) {
+						System.out.println(chaineHeritage[i]);
+					}
+					System.out.println("Implemented Interface : ");
+					String[] interfaceList = parser.getImplementedInterface();
+					for (int i = 0; i < interfaceList.length; i++) {
+						System.out.println(interfaceList[i]);
+					}
+					System.out.println("Constructors : ");
+					System.out.println(parser.getConstructors());
+					System.out.println("Methods : ");
+					System.out.println(parser.getMethods());
+					System.out.println("Fields : ");
+					System.out.println(parser.getFields());
+					System.out.println("***** agregation: ");
+					parser.getAggregationRelations();
+					System.out.println("***** extension: ");
+					parser.getExtensionRelations();
+					System.out.println("***** utilisation: ");
+					parser.getUtilisationRealations();
+					
 				}
 			} catch (Exception E) {
 				System.out.println("Class not found");
