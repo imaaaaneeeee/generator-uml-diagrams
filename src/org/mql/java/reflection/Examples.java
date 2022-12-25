@@ -30,21 +30,21 @@ public class Examples {
        
 	}
 	
-public void exp04() throws ClassNotFoundException, MalformedURLException{
-	  PackageExplorer p = new PackageExplorer();
-	  Set<String> packageList = new HashSet<>();
-	  p.listOfPackage("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\src", packageList); 
-	  for (String pack : packageList) {
-		Set<String> classlist = new HashSet<>();
-		p.getClassList("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\bin\\",pack,classlist);
-		for (String cls : classlist) {
-			p.getDetailClass("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\bin\\", cls);
+	public void exp04() throws ClassNotFoundException, MalformedURLException{
+		PackageExplorer p = new PackageExplorer();
+		Set<String> packageList = new HashSet<>();
+		p.listOfPackage("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\src", packageList); 
+		 for (String pack : packageList) {
+			 Set<String> classlist = new HashSet<>();
+			 p.getClassList("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\bin\\",pack,classlist);
+			 for (String cls : classlist) {
+				 p.getDetailClass("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\bin\\", cls);
+				}
+		}   
 		}
-	}   
-	}
 
 
-public void exp05() throws ClassNotFoundException, MalformedURLException{
+	public void exp05() throws ClassNotFoundException, MalformedURLException{
 	  PackageExplorer p = new PackageExplorer();
 	  Set<String> packageList = new HashSet<>();
 	  p.listOfPackage("C:\\Users\\Dell\\eclipse-workspace\\rev parseur SAX\\src/", packageList);

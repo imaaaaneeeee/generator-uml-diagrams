@@ -8,7 +8,8 @@ public class Main {
 	
 	private void exp01() {
 		 // Agrégation
-	    Commande c = new Commande();
+		Facture f1 = new Facture();
+	    Commande c = new Commande(f1);
 	    c.setNumero(12345);
 	    c.setDate("2022-12-22");
 

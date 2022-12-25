@@ -1,9 +1,13 @@
 package org.mql.java.reflection;
 
 import java.io.File;
+import java.lang.reflect.Field;
+import java.lang.reflect.Parameter;
+import java.lang.reflect.ParameterizedType;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class PackageExplorer {	
@@ -59,6 +63,7 @@ public class PackageExplorer {
 					System.out.println("**************");
 					Class<?> myclass = urlcl.loadClass(className);
 					ClassParser parser = new ClassParser(myclass);
+					ClassRelations c = new ClassRelations(myclass);
 					System.out.println("Class Name : "+parser.getClassSimpleName());
 					System.out.println("class Modifier : " + parser.getClassModifier());
 					System.out.println("Super class : "+parser.getSuperClass());
@@ -78,13 +83,53 @@ public class PackageExplorer {
 					System.out.println(parser.getMethods());
 					System.out.println("Fields : ");
 					System.out.println(parser.getFields());
+					System.out.println("***** association: ");
+					Set<Field> fields = c.getAssociationRelations();
+					for (Field field : fields) {
+						if(field.getType().equals(List.class)) {
+							Class<?> elementType =(Class<?>)((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
+							System.out.println(field.getName()+" est une instance de la classe : "+elementType.getSimpleName());
+						}
+						else {
+							System.out.println(field.getName()+" est une instance de la classe : "+field.getType().getSimpleName());
+						}				
+					}
 					System.out.println("***** agregation: ");
-					parser.getAggregationRelations();
-					System.out.println("***** extension: ");
-					parser.getExtensionRelations();
-					System.out.println("***** utilisation: ");
-					parser.getUtilisationRealations();
-					
+					Set<Field> agregations = c.getAgregationRelations();
+					for(Field field : agregations) {
+						if(field.getType().equals(List.class)) {
+							Class<?> elementType =(Class<?>)((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
+							System.out.println(field.getName()+" est une instance de la classe : "+elementType.getSimpleName());
+						}
+						else {
+							System.out.println(field.getName()+" est une instance de la classe : "+field.getType().getSimpleName());
+						}		
+					}
+					System.out.println("***** composition: ");
+					Set<Field> composition =c.getCompositionRelations();
+					for (Field field : composition) {
+						if(field.getType().equals(List.class)) {
+							Class<?> elementType =(Class<?>)((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
+							System.out.println(field.getName()+" est une instance de la classe : "+elementType.getSimpleName());
+						}
+						else {
+							System.out.println(field.getName()+" est une instance de la classe : "+field.getType().getSimpleName());
+						}	
+					}
+					System.out.println("*****Utilisation: ");
+					Set<Parameter> utilisation = c.getUtilisationRelations();
+					for (Parameter parameter : utilisation) {
+						if(parameter.getParameterizedType() instanceof ParameterizedType) {
+							Class<?> elementType = (Class<?>) ((ParameterizedType) parameter.getParameterizedType()).getActualTypeArguments()[0];
+							System.out.println("une liste de la classe : "+elementType.getName()+" est utilisé ");
+						}
+						else {
+							System.out.println("La classe utilisée est : "+parameter.getType().getName());
+						}
+					}
+					System.out.println("*****extension: ");
+					Class<?> superClass =c.getExensionRelation();
+					System.out.println("la super classe est : "+superClass.getName());
 				}
 			} catch (Exception E) {
 				System.out.println("Class not found");

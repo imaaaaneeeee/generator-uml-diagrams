@@ -4,8 +4,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.lang.reflect.ParameterizedType;
-import java.util.List;
 import java.util.Vector;
 
 
@@ -20,7 +18,6 @@ public class ClassParser{
 	}
 	
 	public ClassParser(Class<?> targetClass) {
-		super();
 		this.targetClass = targetClass;
 	}
 	
@@ -107,58 +104,4 @@ public class ClassParser{
 		}
 		return str;
 	}
-	
-	//Extension
-	public void getExtensionRelations() {
-		Class<?> superClass = targetClass.getSuperclass();
-		if(superClass != null) {
-			System.out.println(targetClass.getName()+" est une extension de : "+ superClass.getName());
-		}
-	}
-	
-	//Agrégation	
-	public void getAggregationRelations () {
-		Field [] fields = targetClass.getDeclaredFields();
-		String packageName = targetClass.getPackage().getName();
-		for(Field field : fields) {
-			if(!field.getType().isPrimitive()) {
-				if(field.getType().getPackage().getName().equals(packageName)) {
-					field.setAccessible(true);
-					System.out.println(field.getName()+" est une instance de la classe : "+field.getType().getSimpleName());
-				}	
-			}
-			if(field.getType().equals(List.class)) {
-				Class<?> elementType =(Class<?>)((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
-				if(!elementType.isPrimitive()) {
-					if(elementType.getPackage().getName().equals(packageName)) {
-						field.setAccessible(true);
-						System.out.println(field.getName()+" est une instance de la classe : "+elementType.getSimpleName());
-					}
-				}
-			}
-		}
-	}
-	
-	
-	//Utilisation
-	public void getUtilisationRealations() {
-		Method[] methods = targetClass.getDeclaredMethods();
-		String packageName = targetClass.getPackage().getName();
-		for (Method method : methods) {
-			Class<?>[] parameterTypes = method.getParameterTypes();
-			for (Class<?> parameterType : parameterTypes) {
-				if(!parameterType.isPrimitive()) {
-					if(parameterType.getPackage().getName().equals(packageName)) {
-						System.out.println(method.getName()+" utilise une instance d'une autre classe");
-						System.out.println("la classe utilisée est : "+parameterType.getName());
-					}	
-				}
-			}
-			if(!method.getReturnType().isPrimitive()) {
-				System.out.println(method.getName()+" utilise une instance d'une autre classe");
-				System.out.println("la classe utilisée est : "+method.getReturnType().getName());
-			}
-		}
-	}
-		
 }

@@ -8,7 +8,18 @@ public class Commande {
 	  private int numero;
 	  private String date;
 	  private List<Produit> produits = new ArrayList<>();
+	  private final Facture f ;
+	  private List<Facture> listeFacture ;
 
+	  public Commande(Facture f) {
+		  this.f=f;
+	  }
+	  
+	  public Commande(List<Facture> listeFacture) {
+		  this.f = new Facture();
+		this.listeFacture=listeFacture;
+	  }
+	  
 	  public void setNumero(int numero) {
 	    this.numero = numero;
 	  }
@@ -22,6 +33,10 @@ public class Commande {
 	  }
 	  
 	  public void ajouterProduits(Vector<Produit> produits) {
+		  
+	  }
+	  
+ public void ajouterProduits1(Vector<Facture> factures) {
 		  
 	  }
 	}
