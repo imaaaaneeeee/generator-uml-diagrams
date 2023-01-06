@@ -1,21 +1,17 @@
-package org.mql.java.reflection;
+package org.mql.java.reflectn.tst;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.lang.reflect.ParameterizedType;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Vector;
 
 
 
 public class ClassParser{
 	private Class<?> targetClass;
+	
+	
 	
 	public ClassParser(Class<?> targetClass) {
 		this.targetClass = targetClass;
@@ -92,57 +88,6 @@ public class ClassParser{
 		return str;
 	}
 	
-	public String getMethodeModifier(Method m) {
-		return Modifier.toString(m.getModifiers());
-	}
-	
-	public Set<Method> getMethodsList(){
-		Method[] methods = targetClass.getDeclaredMethods();
-		Set<Method> methodList = new HashSet<>(Arrays.asList(methods));
-		return methodList;
-	}
-	
-	public Class<?> getElementType(Field field) {
-		ParameterizedType genericType =(ParameterizedType) field.getGenericType();
-		Class<?> elementType =(Class<?>) genericType.getActualTypeArguments()[0];
-		return elementType;
-		
-	}
-	
-	
-	public Set<String> getFieldsList() {
-		String str = new String();
-		Set<String> fieldsList = new HashSet<String>();
-		Field [] fields = targetClass.getDeclaredFields();
-		for (Field field : fields) {
-			if(Collection.class.isAssignableFrom(field.getType())) {
-				Class<?> elementType = getElementType(field);
-				str=field.getType().getSimpleName()+"<"+elementType.getSimpleName()+"> "+field.getName();
-			}else {
-				str=field.getType().getSimpleName()+" "+field.getName();
-			}
-			
-			fieldsList.add(str);
-		}
-		return fieldsList;
-	}
-	
-	public String getFieldModificateur(Field field) {
-		return Modifier.toString(field.getModifiers());
-	}
-	
-	public Set<Field> getFieldList() {
-		Field [] fields = targetClass.getDeclaredFields();
-		Set<Field> fieldList = new HashSet<>(Arrays.asList(fields));
-		return fieldList;
-	}
-	
-	public void getAttributeType(Field field) {
-		if(Collection.class.isAssignableFrom(field.getType())) {
-			
-		}
-	}
-	
 	public String getFields() {
 		String str = new String();
 		Field [] fields = targetClass.getDeclaredFields();
@@ -151,6 +96,4 @@ public class ClassParser{
 		}
 		return str;
 	}
-	
-	
 }

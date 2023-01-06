@@ -1,7 +1,9 @@
-package org.mql.java.examples.example1;
+package org.mql.java.examples;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Vector;
 
 public class Commande {
@@ -10,6 +12,13 @@ public class Commande {
 	  private List<Produit> produits = new ArrayList<>();
 	  private final Facture f ;
 	  private List<Facture> listeFacture ;
+	  private Set<LigneFacture> lfs;
+	  private Facture [] LFFF ;
+	  
+	  public Commande(HashSet<LigneFacture> lfs ) {
+		  this.f = new Facture();
+		  this.lfs=lfs;
+	  }
 
 	  public Commande(Facture f) {
 		  this.f=f;
@@ -28,15 +37,25 @@ public class Commande {
 	    this.date = date;
 	  }
 
-	  public void ajouterProduit(Produit p) {
-	    produits.add(p);
+	  public void ajouterProduit(Produit [] p) {
+	  // produits.add(p);
 	  }
 	  
 	  public void ajouterProduits(Vector<Produit> produits) {
 		  
 	  }
 	  
- public void ajouterProduits1(Vector<Facture> factures) {
+	  public void ajouterProduits1(Vector<Facture> factures) {
 		  
 	  }
+	  
+	  public void ajouterProduits2(Set<LigneFacture> l) {
+		  
+	  }
+	  
+	  public void ajouterProduits3(String[] l) {
+		  
+	  }
+	  
+	  
 	}

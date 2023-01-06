@@ -1,4 +1,4 @@
-package org.mql.java.examples.example1;
+package org.mql.java.examples;
 
 public class Produit {
 	  private String reference;

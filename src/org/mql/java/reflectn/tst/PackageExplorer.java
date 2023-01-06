@@ -1,4 +1,4 @@
-package org.mql.java.reflection;
+package org.mql.java.reflectn.tst;
 
 import java.io.File;
 import java.lang.reflect.Parameter;
@@ -41,23 +41,7 @@ public class PackageExplorer {
 	        }      
 	    }
 	  
-	  public Class<?> loadClass(String className ) {
-		  try {
-				File f = new File(projectDirectory);
-				URL[] cp = { f.toURI().toURL() };
-				try (URLClassLoader urlcl = new URLClassLoader(cp)) {
-					Class<?> myclass = urlcl.loadClass(className);
-					return myclass;
-					 
-				}
-					
-				} catch (Exception E) {
-				System.out.println("Class not found"+ className);	
-		  }
-		return null;
-	  }
-	  
-	   public void getDetailClass(String className) {
+	  public void getDetailClass(String className) {
 		  try {
 				File f = new File(projectDirectory);
 				URL[] cp = { f.toURI().toURL() };
@@ -108,13 +92,10 @@ public class PackageExplorer {
 		//Set<String> classList = new HashSet<>();
 		//p.getDetailClass("org.mql.java.ui.Form");
 		//p.getClassRelations("C:\\Users\\Dell\\eclipse-workspace\\rev parseur SAX\\bin\\", "org.mql.java.ui.Form");
-		 // PackageExplorer p = new PackageExplorer("C:\\Users\\Dell\\eclipse-workspace\\rev parseur SAX\\bin\\");
-		  //Set<String> classList = new HashSet<>();
-		 //p.getClassList("org.mql.java.ui", classList);
-		 //System.out.println(classList);
-		  PackageExplorer p = new PackageExplorer("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\bin\\");
-		  p.getDetailClass("org.mql.java.models.ClassModel");
-		  
+		  PackageExplorer p = new PackageExplorer("C:\\Users\\Dell\\eclipse-workspace\\rev parseur SAX\\bin\\");
+		  Set<String> classList = new HashSet<>();
+		 p.getClassList("org.mql.java.ui", classList);
+		 System.out.println(classList);
 		
 	}
 		  

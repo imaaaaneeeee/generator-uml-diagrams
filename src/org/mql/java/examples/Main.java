@@ -1,4 +1,4 @@
-package org.mql.java.examples.example1;
+package org.mql.java.examples;
 
 public class Main {
 
@@ -21,8 +21,8 @@ public class Main {
 	    p2.setReference("P002");
 	    p2.setPrix(20.0);
 
-	    c.ajouterProduit(p1);
-	    c.ajouterProduit(p2); // La commande utilise des produits, mais elle n'a pas de contrôle sur leur vie
+	   // c.ajouterProduit(p1);
+	    //c.ajouterProduit(p2); // La commande utilise des produits, mais elle n'a pas de contrôle sur leur vie
 
 	    // Composition
 	    Facture f = new Facture();

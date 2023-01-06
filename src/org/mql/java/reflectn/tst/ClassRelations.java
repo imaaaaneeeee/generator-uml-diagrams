@@ -1,4 +1,4 @@
-package org.mql.java.reflection;
+package org.mql.java.reflectn.tst;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
