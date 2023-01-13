@@ -1,40 +1,62 @@
 package org.mql.java.reflection;
 
+import java.io.File;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import org.mql.java.models.PackageModel;
+import org.mql.java.models.ProjectModel;
 
 public class ProjectExplorer {
 	
-	private PackageExplorer packageExplorer ;
+	
 	
 	public ProjectExplorer() {
 		
 	}
 
 	public ProjectExplorer(String projectDirectory) {
-		packageExplorer= new PackageExplorer(projectDirectory);
-		
-		Set<String> packageList = new HashSet<>();
-		packageExplorer.listOfPackage(projectDirectory, packageList);
-		
-		for (String pack : packageList) {
-			System.out.println("_______________________________________________");
-			System.out.println("Package name : "+pack);
-			Set<String> classListe =new HashSet<String>();
-			packageExplorer.getClassList( pack, classListe);
-			for (String cls : classListe) {
-				
-				System.out.println(cls +" : ");
-				packageExplorer.getDetailClass( cls);	
-				packageExplorer.getClassRelations( cls);
-			}
-		}
-		
-		
+		exploreProject(projectDirectory);
 	}
 	
+	 public void exploreProject(String projectDirectory ) {
+		Set<String> packageList = new HashSet<>();
+		listOfPackage(projectDirectory, packageList);
+		ProjectModel projectModel = new ProjectModel(projectDirectory);
+		Set<PackageModel> listPackageModel = new HashSet<>();
+		
+		for (String pack : packageList) {
+			PackageExplorer packageExplorer = new PackageExplorer(projectDirectory);
+			PackageModel packageModel = new PackageModel(projectDirectory, pack);	
+			packageExplorer.setPackageModel(pack, packageModel);
+			listPackageModel.add(packageModel);
+		}
+		projectModel.setPackages(listPackageModel);
+		//System.out.println(projectModel);
+		
+	 }
+	
+	 public void listOfPackage(String directoryName, Set<String> pack) {
+	        File directory = new File(directoryName);
+	        File[] fList = directory.listFiles(); 
+	        for (File file : fList) {
+	            if (file.isFile()) {
+	                String path=file.getPath();
+	                String packName=path.substring(path.indexOf("bin")+4, path.lastIndexOf('\\'));
+	                pack.add(packName.replace('\\', '.'));
+	            } else if (file.isDirectory()) {
+
+	                listOfPackage(file.getAbsolutePath(), pack);
+	            }
+	        }      
+	    }
+	 
+	
+	
 	public static void main(String[] args) {
-		new ProjectExplorer("C:\\Users\\Dell\\eclipse-workspace\\rev parseur SAX\\bin\\");
+		ProjectExplorer p = new ProjectExplorer("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\bin\\");
+		p.exploreProject("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\bin\\");
 	}
 	
 

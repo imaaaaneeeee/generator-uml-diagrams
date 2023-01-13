@@ -13,7 +13,7 @@ public class Commande {
 	  private final Facture f ;
 	  private List<Facture> listeFacture ;
 	  private Set<LigneFacture> lfs;
-	  private Facture [] LFFF ;
+	  private Facture[] LF ;
 	  
 	  public Commande(HashSet<LigneFacture> lfs ) {
 		  this.f = new Facture();
@@ -53,8 +53,8 @@ public class Commande {
 		  
 	  }
 	  
-	  public void ajouterProduits3(String[] l) {
-		  
+	  public Set<Commande> ajouterProduits3(String[] l , Vector<LigneFacture> ligneFacture) {
+		  return null ;
 	  }
 	  
 	  

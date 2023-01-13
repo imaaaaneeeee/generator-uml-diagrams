@@ -5,12 +5,18 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
+
+import org.mql.java.models.ClassModel;
+import org.mql.java.models.FieldModel;
+import org.mql.java.models.MethodeModel;
+import org.mql.java.models.TypeModel;
 
 
 
@@ -106,7 +112,6 @@ public class ClassParser{
 		ParameterizedType genericType =(ParameterizedType) field.getGenericType();
 		Class<?> elementType =(Class<?>) genericType.getActualTypeArguments()[0];
 		return elementType;
-		
 	}
 	
 	
@@ -151,6 +156,26 @@ public class ClassParser{
 		}
 		return str;
 	}
+	public void getFieldModels() {
+		for (Field field : targetClass.getDeclaredFields()) {
+			FieldModel fieldTmp = new FieldModel(field);
+			System.out.println(fieldTmp);
+		}
+	}
+	
+	public void getMethodesModels() {
+		for (Method methode : targetClass.getDeclaredMethods()) {
+			MethodeModel methodeTmp = new MethodeModel(methode);
+			System.out.println(methodeTmp);
+		}
+	}
+	
+	public void getClassModel() {
+		ClassModel cm = new ClassModel(targetClass.getName());
+		System.out.println(cm);
+	}
+	
+	
 	
 	
 }

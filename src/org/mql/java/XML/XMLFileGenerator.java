@@ -18,6 +18,7 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.mql.java.reflection.ClassParser;
 import org.mql.java.reflection.PackageExplorer;
+import org.mql.java.reflection.ProjectExplorer;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -32,10 +33,10 @@ public class XMLFileGenerator {
 	
 	public void fct() {
 		try {
-			
+			ProjectExplorer projectExplorer = new ProjectExplorer(projectName);
 			PackageExplorer packageExplorer = new PackageExplorer(projectName);
 			Set<String> packageList = new HashSet<>();
-			packageExplorer.listOfPackage(projectName, packageList);
+			projectExplorer.listOfPackage(projectName, packageList);
 			
 			// Création d'une instance de DocumentBuilder
 		    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -60,7 +61,7 @@ public class XMLFileGenerator {
 		    		clazz.setAttribute("className", cls);
 		    		pack.appendChild(clazz);
 		    		
-		    		Class<?> c= packageExplorer.loadClass(cls);
+		    		Class<?> c=  null ;// packageExplorer.loadClass(cls);
 					ClassParser classparser = new ClassParser(c);
 					String clsm =classparser.getClassModifier();
 					
