@@ -7,6 +7,7 @@ public class PackageModel {
 	private String projectName ;
 	private String packageName ;
 	private Set<ClassModel> classes ;
+	private Set<RelationModel> relation ;
 
 	public PackageModel(String projecName,String packageName ) {
 		this.projectName=projecName;
@@ -15,6 +16,14 @@ public class PackageModel {
 
 	public String getProjectName() {
 		return projectName;
+	}
+
+	public Set<RelationModel> getRelation() {
+		return relation;
+	}
+
+	public void setRelation(Set<RelationModel> relation) {
+		this.relation = relation;
 	}
 
 	public String getPackageName() {
@@ -31,14 +40,7 @@ public class PackageModel {
 
 	@Override
 	public String toString() {
-		return "PackageModel [packageName=" + packageName + ", classes=" + classes
-				+ "] \n";
+		return "PackageModel [projectName=" + projectName + ", packageName=" + packageName + ", classes=" + classes
+				+ ", relation=" + relation + "] \n \n";
 	}
-	
-	
-	
-	
-	
-	
-
 }

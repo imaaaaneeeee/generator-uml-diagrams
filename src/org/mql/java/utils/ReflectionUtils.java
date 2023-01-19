@@ -27,10 +27,6 @@ public class ReflectionUtils {
 		 else return false;	
 	}
 	
-	//public static void setGenericFieldInfo(Field field,ParameterizedType genericType,Class<?> elementType) {
-	//	genericType = (ParameterizedType) field.getGenericType();
-	//	elementType = (Class<?>) genericType.getActualTypeArguments()[0];
-	//}
 	
 	
 }

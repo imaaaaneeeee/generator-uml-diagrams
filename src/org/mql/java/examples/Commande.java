@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Vector;
 
-public class Commande {
+public class Commande{
 	  private int numero;
 	  private String date;
 	  private List<Produit> produits = new ArrayList<>();

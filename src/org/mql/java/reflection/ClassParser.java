@@ -5,10 +5,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
@@ -16,7 +14,6 @@ import java.util.Vector;
 import org.mql.java.models.ClassModel;
 import org.mql.java.models.FieldModel;
 import org.mql.java.models.MethodeModel;
-import org.mql.java.models.TypeModel;
 
 
 

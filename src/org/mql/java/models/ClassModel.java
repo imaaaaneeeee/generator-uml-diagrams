@@ -30,6 +30,43 @@ public class ClassModel {
 			methods.add(new MethodeModel(method));
 		}
 	}
+	
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public Set<FieldModel> getFields() {
+		return fields;
+	}
+
+
+
+	public void setFields(Set<FieldModel> fields) {
+		this.fields = fields;
+	}
+
+
+
+	public Set<MethodeModel> getMethods() {
+		return methods;
+	}
+
+
+
+	public void setMethods(Set<MethodeModel> methods) {
+		this.methods = methods;
+	}
+
+
 
 	@Override
 	public String toString() {
