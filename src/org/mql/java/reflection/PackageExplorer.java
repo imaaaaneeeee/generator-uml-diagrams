@@ -1,7 +1,6 @@
 package org.mql.java.reflection;
 
 import java.io.File;
-import java.lang.reflect.Parameter;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.HashSet;
@@ -9,6 +8,7 @@ import java.util.Set;
 
 import org.mql.java.models.ClassModel;
 import org.mql.java.models.PackageModel;
+import org.mql.java.models.RelationModel;
 
 public class PackageExplorer {
 
@@ -27,10 +27,8 @@ public class PackageExplorer {
 			}
 		}
 	}
-	
-	
 
-	public void setPackageModel(String packageName, PackageModel packageModel) {
+	public void setPackageModel(String packageName, PackageModel packageModel ) {
 		try {
 			packageModel = new PackageModel(projectDirectory, packageName);
 			Set<ClassModel> classes = new HashSet<>();
@@ -49,27 +47,8 @@ public class PackageExplorer {
 		}
 	}
 
-	public void getClassRelations(String className) {
-		try {
-			File f = new File(projectDirectory);
-			URL[] cp = { f.toURI().toURL() };
-			try (URLClassLoader urlcl = new URLClassLoader(cp)) {
-				Class<?> myclass = urlcl.loadClass(className);
-				ClassRelations clsR = new ClassRelations(projectDirectory, myclass);
-				Set<Parameter> utilisation = new HashSet<>();
-				utilisation = clsR.getUtilisation();
-				System.out.println("les relations d'utilisation : ");
-				System.out.println(utilisation);
-			}
-			System.out.println("**************");
-		} catch (Exception e) {
-			System.out.println("erreur : " + e.getMessage() + "Class not found " + className);
-		}
-	}
-
 	public static void main(String[] args) {
-		 new PackageExplorer("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\bin\\");
-		
+		new PackageExplorer("C:\\Users\\Dell\\eclipse-workspace\\UML Diagrams generator\\bin\\");
 	}
 
 }

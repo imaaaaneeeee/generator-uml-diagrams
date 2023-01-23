@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="C:\Users\Dell\eclipse-workspace\UML Diagrams generator\bin\">
+    <packages>
+        <package name="org.mql.java.xml">
+            <classes>
+                <class name="XmlPersister">
+                    <fields/>
+                    <methods>
+                        <method modifier="private static" name="createClassElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.ClassModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createFieldElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.FieldModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="saveToXml" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createFieldsElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.ClassModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createPackageElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.PackageModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createRootElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.ProjectModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createPackagesElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.ProjectModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createMethodsElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.ClassModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createClassesElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.PackageModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createMethodElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.MethodeModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="main" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createRelationElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.RelationModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createRelationsElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.PackageModel"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+            </classes>
+            <relations/>
+        </package>
+        <package name="org.mql.java.reflection">
+            <classes>
+                <class name="ClassParser">
+                    <fields>
+                        <field modifier="private" name="targetClass" type="java.lang.Class&lt;?&gt;"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getSuperClass" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getFieldsList" returnType="java.util.Set&lt;java.lang.String&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getFieldList" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getConstructors" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getFieldModels" returnType="void">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getMethodesModels" returnType="void">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getFields" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getChaineHeritage" returnType="java.lang.String[]">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getClassModel" returnType="void">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getMethodsList" returnType="java.util.Set&lt;java.lang.reflect.Method&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getMethodeModifier" returnType="java.lang.String">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Method"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getClassSimpleName" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getAttributeType" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getElementType" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getFieldModificateur" returnType="java.lang.String">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getMethods" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getImplementedInterface" returnType="java.lang.String[]">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getClassModifier" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+                <class name="ClassRelations">
+                    <fields>
+                        <field modifier="private" name="classField" type="java.util.Set&lt;java.lang.reflect.Field&gt;"/>
+                        <field modifier="private" name="packageExplorer" type="org.mql.java.reflection.PackageExplorer"/>
+                        <field modifier="private" name="composition" type="java.util.Set&lt;java.lang.reflect.Field&gt;"/>
+                        <field modifier="private" name="association" type="java.util.Set&lt;java.lang.reflect.Field&gt;"/>
+                        <field modifier="private" name="utilisation" type="java.util.Set&lt;java.lang.reflect.Parameter&gt;"/>
+                        <field modifier="private" name="ListClassField" type="java.util.Set&lt;java.lang.reflect.Field&gt;"/>
+                        <field modifier="private" name="fieldsTest" type="java.util.List&lt;org.mql.java.models.TypeModel&gt;"/>
+                        <field modifier="private" name="targetClass" type="java.lang.Class&lt;?&gt;"/>
+                        <field modifier="private" name="agregation" type="java.util.Set&lt;java.lang.reflect.Field&gt;"/>
+                        <field modifier="private" name="implementation" type="java.lang.Class&lt;?&gt;[]"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getUtilisationRelations" returnType="java.util.Set&lt;java.lang.reflect.Parameter&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getClassFields" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getAssociation" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getAssociationRelations" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getAgregation" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getImplementationInterface" returnType="java.lang.Class&lt;?&gt;[]">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="isConstuctorParameter" returnType="boolean">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getExensionRelation" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getElementType" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getArrayClassFields" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getAgregationRelations" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getCompositionRelations" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getElementType" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Parameter"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="classMemePack" returnType="boolean">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getUtilisation" returnType="java.util.Set&lt;java.lang.reflect.Parameter&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getListClassFields" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public static" name="main" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getImplementation" returnType="java.lang.Class&lt;?&gt;[]">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getMethodesParameters" returnType="java.util.Set&lt;java.lang.reflect.Parameter&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getComposition" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getTargetClass" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+                <class name="PackageExplorer">
+                    <fields>
+                        <field modifier="private" name="projectDirectory" type="java.lang.String"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public static" name="main" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getClassList" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setPackageModel" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="org.mql.java.models.PackageModel"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+                <class name="ProjectExplorer">
+                    <fields/>
+                    <methods>
+                        <method modifier="public" name="createPackageModel" returnType="org.mql.java.models.PackageModel">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="createClassModel" returnType="java.util.Set&lt;org.mql.java.models.ClassModel&gt;">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setAgregationModel" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setImplementationModel" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.Class[]"/>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="exploreProject" returnType="org.mql.java.models.ProjectModel">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setCompositionModel" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="listOfPackage" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="main" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getPackageList" returnType="java.util.Set&lt;java.lang.String&gt;">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="createRelationModel" returnType="java.util.Set&lt;org.mql.java.models.RelationModel&gt;">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setExtentionModel" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.Class"/>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setUtilisationModel" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+            </classes>
+            <relations/>
+        </package>
+        <package name="org.mql.java.models">
+            <classes>
+                <class name="ClassModel">
+                    <fields>
+                        <field modifier="private" name="simpleName" type="java.lang.String"/>
+                        <field modifier="private" name="fields" type="java.util.Set&lt;org.mql.java.models.FieldModel&gt;"/>
+                        <field modifier="private" name="isInterface" type="boolean"/>
+                        <field modifier="private" name="name" type="java.lang.String"/>
+                        <field modifier="private" name="methods" type="java.util.Set&lt;org.mql.java.models.MethodeModel&gt;"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="setMethods" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="isInterface" returnType="boolean">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getName" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getMethods" returnType="java.util.Set&lt;org.mql.java.models.MethodeModel&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setName" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setSimpleName" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="toString" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setInterface" returnType="void">
+                            <parameters>
+                                <parameter type="boolean"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getSimpleName" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setFields" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getFields" returnType="java.util.Set&lt;org.mql.java.models.FieldModel&gt;">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+                <class name="FieldModel">
+                    <fields>
+                        <field modifier="private" name="modifier" type="java.lang.String"/>
+                        <field modifier="private" name="isIterableOrArray" type="boolean"/>
+                        <field modifier="private" name="elementType" type="java.lang.reflect.Type"/>
+                        <field modifier="private" name="name" type="java.lang.String"/>
+                        <field modifier="private" name="genericType" type="java.lang.reflect.Type"/>
+                        <field modifier="private" name="type" type="java.lang.reflect.Type"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="setName" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setModifier" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="toString" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setIterableOrArray" returnType="void">
+                            <parameters>
+                                <parameter type="boolean"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="checkIterableOrArray" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getName" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getGenericType" returnType="java.lang.reflect.Type">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getElementType" returnType="java.lang.reflect.Type">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="isIterableOrArray" returnType="boolean">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getType" returnType="java.lang.reflect.Type">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setGenericType" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.reflect.ParameterizedType"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setElementType" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.Class"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setType" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Type"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getModifier" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+                <class name="MethodeModel">
+                    <fields>
+                        <field modifier="private" name="parameterInfo" type="org.mql.java.models.TypeModel[]"/>
+                        <field modifier="private" name="modifier" type="java.lang.String"/>
+                        <field modifier="private" name="name" type="java.lang.String"/>
+                        <field modifier="private" name="returnType" type="java.lang.reflect.Type"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="setParameterInfo" returnType="void">
+                            <parameters>
+                                <parameter type="org.mql.java.models.TypeModel[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="toString" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getReturnType" returnType="java.lang.reflect.Type">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setName" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setModifier" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getName" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getModifier" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setReturnType" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Type"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getParameterInfo" returnType="org.mql.java.models.TypeModel[]">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+                <class name="ProjectModel">
+                    <fields>
+                        <field modifier="private" name="name" type="java.lang.String"/>
+                        <field modifier="private" name="packages" type="java.util.Set&lt;org.mql.java.models.PackageModel&gt;"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getPackages" returnType="java.util.Set&lt;org.mql.java.models.PackageModel&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getName" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setPackages" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="toString" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+                <class name="RelationModel">
+                    <fields>
+                        <field modifier="private" name="relatedClass" type="java.lang.String"/>
+                        <field modifier="private" name="relation" type="org.mql.java.utils.Relation"/>
+                        <field modifier="private" name="relatedWith" type="java.lang.String"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getRelation" returnType="org.mql.java.utils.Relation">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setRelatedWith" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="toString" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getRelatedClass" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getRelatedWith" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setRelation" returnType="void">
+                            <parameters>
+                                <parameter type="org.mql.java.utils.Relation"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setRelatedClass" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+                <class name="ReturnTypeModel">
+                    <fields>
+                        <field modifier="private" name="returntype" type="java.lang.reflect.Type"/>
+                        <field modifier="private" name="genericType" type="java.lang.reflect.ParameterizedType"/>
+                        <field modifier="private" name="isIterable" type="boolean"/>
+                        <field modifier="private" name="elementType" type="java.lang.Class&lt;?&gt;"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getGenericType" returnType="java.lang.reflect.ParameterizedType">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="toString" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="isIterable" returnType="boolean">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getElementType" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getReturntype" returnType="java.lang.reflect.Type">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+                <class name="TypeModel">
+                    <fields>
+                        <field modifier="private" name="isIterableOrArray" type="boolean"/>
+                        <field modifier="private" name="genericType" type="java.lang.reflect.Type"/>
+                        <field modifier="private" name="type" type="java.lang.reflect.Type"/>
+                        <field modifier="private" name="elementType" type="java.lang.reflect.Type"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="toString" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public static" name="getGenericType" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Type"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getElementType" returnType="java.lang.reflect.Type">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="isIterableOrArray" returnType="boolean">
+                            <parameters/>
+                        </method>
+                        <method modifier="public static" name="genericTypeCastableToClass" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Type"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setType" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Type"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getGenericType" returnType="java.lang.reflect.Type">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getType" returnType="java.lang.reflect.Type">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+                <class name="PackageModel">
+                    <fields>
+                        <field modifier="private" name="packageName" type="java.lang.String"/>
+                        <field modifier="private" name="classes" type="java.util.Set&lt;org.mql.java.models.ClassModel&gt;"/>
+                        <field modifier="private" name="relation" type="java.util.Set&lt;org.mql.java.models.RelationModel&gt;"/>
+                        <field modifier="private" name="projectName" type="java.lang.String"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getProjectName" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getRelation" returnType="java.util.Set&lt;org.mql.java.models.RelationModel&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="setRelation" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setClasses" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getPackageName" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getClasses" returnType="java.util.Set&lt;org.mql.java.models.ClassModel&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="toString" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+            </classes>
+            <relations>
+                <relation related-Class="ClassModel" related-With="interface java.util.Set" relation-type="Utilisation"/>
+                <relation related-Class="ClassModel" related-With="interface java.util.Set" relation-type="Utilisation"/>
+            </relations>
+        </package>
+        <package name="org.mql.java.utils">
+            <classes>
+                <class name="ReflectionUtils">
+                    <fields/>
+                    <methods>
+                        <method modifier="public static" name="isArray" returnType="boolean">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="isIterable" returnType="boolean">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="isArray" returnType="boolean">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Parameter"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="isIterable" returnType="boolean">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Parameter"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+                <class name="Relation">
+                    <fields>
+                        <field modifier="public static final" name="Agregation" type="org.mql.java.utils.Relation"/>
+                        <field modifier="private static final" name="ENUM$VALUES" type="org.mql.java.utils.Relation[]"/>
+                        <field modifier="public static final" name="Utilisation" type="org.mql.java.utils.Relation"/>
+                        <field modifier="public static final" name="Implementation" type="org.mql.java.utils.Relation"/>
+                        <field modifier="public static final" name="Generalisation" type="org.mql.java.utils.Relation"/>
+                        <field modifier="public static final" name="Extention" type="org.mql.java.utils.Relation"/>
+                        <field modifier="public static final" name="Composition" type="org.mql.java.utils.Relation"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public static" name="values" returnType="org.mql.java.utils.Relation[]">
+                            <parameters/>
+                        </method>
+                        <method modifier="public static" name="valueOf" returnType="org.mql.java.utils.Relation">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+            </classes>
+            <relations/>
+        </package>
+        <package name="org.mql.java.examples">
+            <classes>
+                <class name="Facture">
+                    <fields>
+                        <field modifier="private" name="lignes" type="java.util.List&lt;org.mql.java.examples.LigneFacture&gt;"/>
+                        <field modifier="private" name="date" type="java.lang.String"/>
+                        <field modifier="private" name="numero" type="int"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="setNumero" returnType="void">
+                            <parameters>
+                                <parameter type="int"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setDate" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="ajouterLigne" returnType="void">
+                            <parameters>
+                                <parameter type="org.mql.java.examples.LigneFacture"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+                <class name="Commande">
+                    <fields>
+                        <field modifier="private" name="produits" type="java.util.List&lt;org.mql.java.examples.Produit&gt;"/>
+                        <field modifier="private" name="listeFacture" type="java.util.List&lt;org.mql.java.examples.Facture&gt;"/>
+                        <field modifier="private" name="date" type="java.lang.String"/>
+                        <field modifier="private" name="LF" type="org.mql.java.examples.Facture[]"/>
+                        <field modifier="private" name="numero" type="int"/>
+                        <field modifier="private" name="lfs" type="java.util.Set&lt;org.mql.java.examples.LigneFacture&gt;"/>
+                        <field modifier="private final" name="f" type="org.mql.java.examples.Facture"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="ajouterProduits3" returnType="java.util.Set&lt;org.mql.java.examples.Commande&gt;">
+                            <parameters>
+                                <parameter type="java.lang.String[]"/>
+                                <parameter type="java.util.Vector"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="ajouterProduit" returnType="void">
+                            <parameters>
+                                <parameter type="org.mql.java.examples.Produit[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setNumero" returnType="void">
+                            <parameters>
+                                <parameter type="int"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="ajouterProduits2" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="ajouterProduits1" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Vector"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="ajouterProduits" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Vector"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setDate" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+                <class name="Produit">
+                    <fields>
+                        <field modifier="private" name="prix" type="double"/>
+                        <field modifier="private" name="reference" type="java.lang.String"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="setReference" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setPrix" returnType="void">
+                            <parameters>
+                                <parameter type="double"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+                <interface name="I1">
+                    <fields/>
+                    <methods/>
+                </interface>
+                <class name="Main">
+                    <fields/>
+                    <methods>
+                        <method modifier="public static" name="main" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private" name="exp01" returnType="void">
+                            <parameters/>
+                        </method>
+                    </methods>
+                </class>
+                <class name="LigneFacture">
+                    <fields>
+                        <field modifier="private" name="quantite" type="int"/>
+                        <field modifier="private" name="produit" type="org.mql.java.examples.Produit"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="setQuantite" returnType="void">
+                            <parameters>
+                                <parameter type="int"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setProduit" returnType="void">
+                            <parameters>
+                                <parameter type="org.mql.java.examples.Produit"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </class>
+            </classes>
+            <relations>
+                <relation related-Class="Facture" related-With="class org.mql.java.examples.LigneFacture" relation-type="Utilisation"/>
+                <relation related-Class="Facture" related-With="I1" relation-type="Implementation"/>
+            </relations>
+        </package>
+    </packages>
+</project>

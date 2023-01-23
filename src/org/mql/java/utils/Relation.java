@@ -5,5 +5,6 @@ public enum Relation {
 	Implementation,
 	Agregation,
 	Utilisation,	
-	Extention;
+	Extention,
+	Composition;
 }

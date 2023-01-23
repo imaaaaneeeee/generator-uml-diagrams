@@ -3,7 +3,7 @@ package org.mql.java.examples;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Facture {
+public class Facture implements I1 {
 	  private int numero;
 	  private String date;
 	  private List<LigneFacture> lignes = new ArrayList<>();

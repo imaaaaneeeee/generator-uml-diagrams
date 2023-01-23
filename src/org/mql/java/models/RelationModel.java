@@ -1,14 +1,14 @@
 package org.mql.java.models;
 
-import java.lang.reflect.AnnotatedElement;
 
 import org.mql.java.utils.Relation;
 
 public class RelationModel {
 	private String relatedClass;
-	private AnnotatedElement relatedWith;
+	private String relatedWith; 
 	private Relation relation ;
-
+	
+	
 	public RelationModel() {
 	}
 
@@ -20,11 +20,11 @@ public class RelationModel {
 		this.relatedClass = relatedClass;
 	}
 
-	public AnnotatedElement getRelatedWith() {
+	public String getRelatedWith() {
 		return relatedWith;
 	}
 
-	public void setRelatedWith(AnnotatedElement relatedWith) {
+	public void setRelatedWith(String relatedWith) {
 		this.relatedWith = relatedWith;
 	}
 

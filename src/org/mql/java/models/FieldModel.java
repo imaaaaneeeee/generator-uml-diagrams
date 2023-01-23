@@ -10,13 +10,13 @@ public class FieldModel {
 	private Type type;
 	private String modifier;
 	private boolean isIterableOrArray;
-	private ParameterizedType genericType;
-	private Class<?> elementType;
+	private Type genericType;
+	private Type elementType;
 
 	public FieldModel(Field field) {
 		name = field.getName();
 		modifier = Modifier.toString(field.getModifiers());
-		type = field.getType();
+		type = field.getGenericType();
 		checkIterableOrArray(field);
 	}
 	
@@ -33,4 +33,53 @@ public class FieldModel {
 				+ isIterableOrArray + ", genericType=" + genericType + ", elementType=" + elementType + "]";
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Type getType() {
+		return type;
+	}
+
+	public void setType(Type type) {
+		this.type = type;
+	}
+
+	public String getModifier() {
+		return modifier;
+	}
+
+	public void setModifier(String modifier) {
+		this.modifier = modifier;
+	}
+
+	public boolean isIterableOrArray() {
+		return isIterableOrArray;
+	}
+
+	public void setIterableOrArray(boolean isIterableOrArray) {
+		this.isIterableOrArray = isIterableOrArray;
+	}
+
+	public Type getGenericType() {
+		return genericType;
+	}
+
+	public void setGenericType(ParameterizedType genericType) {
+		this.genericType = genericType;
+	}
+
+	public Type getElementType() {
+		return elementType;
+	}
+
+	public void setElementType(Class<?> elementType) {
+		this.elementType = elementType;
+	}
+	
+	
 }

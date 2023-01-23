@@ -13,6 +13,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.mql.java.models.TypeModel;
+
 public class ClassRelations {
 
 	private Class<?> targetClass;
@@ -25,6 +27,8 @@ public class ClassRelations {
 	private Set<Field> agregation;
 	private Set<Field> composition;
 	private Set<Parameter> utilisation;
+	private Class<?>[] implementation;
+	private List<TypeModel> fieldsTest;
 
 	public ClassRelations(String projectDirectory, Class<?> targetClass) {
 		packageExplorer = new PackageExplorer(projectDirectory);
@@ -42,6 +46,7 @@ public class ClassRelations {
 		association = getAssociationRelations();
 		agregation = getAgregationRelations();
 		composition = getCompositionRelations();
+		implementation=getImplementationInterface();
 
 	}
 
@@ -110,6 +115,9 @@ public class ClassRelations {
 		}
 		return ListClassField;
 	}
+	
+
+	
 
 	// retourne les fields qui sont un tableau d'une classe ds le meme package
 	public Set<Field> getArrayClassFields() {
@@ -140,10 +148,10 @@ public class ClassRelations {
 	
 	
 	public Class<?>[] getImplementationInterface() {
-	    Class<?>[] interfaces = targetClass.getInterfaces();
+	    implementation = targetClass.getInterfaces();
 	    List<Class<?>> samePackageInterfaces = new ArrayList<>();
 	    String targetPackage = targetClass.getPackage().getName();
-	    for (Class<?> i : interfaces) {
+	    for (Class<?> i : implementation) {
 	        if (i.getPackage().getName().equals(targetPackage)) {
 	            samePackageInterfaces.add(i);
 	        }
@@ -153,11 +161,10 @@ public class ClassRelations {
 
 
 	public Class<?> getExensionRelation() {
+		if(!targetClass.isInterface()) {
 		Class<?> superClass = targetClass.getSuperclass();
-		if (classMemePack(superClass.getName()))
-			return superClass;
-		else
-			return null;
+		if (classMemePack(superClass.getName())) return superClass;
+		}	return null;
 	}
 
 	public Set<Field> getAssociationRelations() {
@@ -237,6 +244,10 @@ public class ClassRelations {
 
 	public Set<Parameter> getUtilisation() {
 		return utilisation;
+	}
+	
+	public Class<?>[] getImplementation() {
+		return implementation;
 	}
 
 	public static void main(String[] args) {
