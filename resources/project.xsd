@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="project">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="packages">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="package" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="classes">
+                                            <xs:complexType>
+                                                <xs:choice maxOccurs="unbounded">
+                                                    <xs:element name="class" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="fields">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence minOccurs="0">
+                                                                            <xs:element name="field"
+                                                                                minOccurs="0"
+                                                                                maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute
+                                                                                        name="modifier"
+                                                                                        use="required" />
+                                                                                    <xs:attribute
+                                                                                        name="name"
+                                                                                        use="required" />
+                                                                                    <xs:attribute
+                                                                                        name="type"
+                                                                                        use="required" />
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="methods">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element
+                                                                                name="method"
+                                                                                maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element
+                                                                                            name="parameters">
+                                                                                            <xs:complexType>
+                                                                                                <xs:sequence
+                                                                                                    minOccurs="0">
+                                                                                                    <xs:element
+                                                                                                        name="parameter"
+                                                                                                        minOccurs="0"
+                                                                                                        maxOccurs="unbounded">
+                                                                                                        <xs:complexType>
+                                                                                                            <xs:attribute
+                                                                                                                name="type"
+                                                                                                                use="required" />
+                                                                                                        </xs:complexType>
+                                                                                                    </xs:element>
+                                                                                                </xs:sequence>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                    </xs:sequence>
+                                                                                    <xs:attribute
+                                                                                        name="modifier"
+                                                                                        use="required" />
+                                                                                    <xs:attribute
+                                                                                        name="name"
+                                                                                        use="required" />
+                                                                                    <xs:attribute
+                                                                                        name="returnType"
+                                                                                        use="required" />
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="name" type="xs:ID"
+                                                                use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="interface" minOccurs="0">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="fields" />
+                                                                <xs:element name="methods" />
+                                                            </xs:sequence>
+                                                            <xs:attribute name="name" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:choice>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="relations">
+                                            <xs:complexType>
+                                                <xs:sequence minOccurs="0">
+                                                    <xs:element name="relation" minOccurs="0"
+                                                        maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="related-Class"
+                                                                use="required" />
+                                                            <xs:attribute name="related-With"
+                                                                use="required" />
+                                                            <xs:attribute name="relation-type"
+                                                                use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="name" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" use="required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

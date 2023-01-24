@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project name="C:\Users\Dell\eclipse-workspace\UML Diagrams generator\bin\">
+<project name="C:\Users\Dell\eclipse-workspace\UML Diagrams generator\bin\"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project.xsd">
     <packages>
         <package name="org.mql.java.xml">
             <classes>
                 <class name="XmlPersister">
                     <fields/>
                     <methods>
-                        <method modifier="private static" name="createClassElement" returnType="org.w3c.dom.Element">
+                        <method modifier="private static" name="createRootElement" returnType="org.w3c.dom.Element">
                             <parameters>
                                 <parameter type="org.w3c.dom.Document"/>
-                                <parameter type="org.mql.java.models.ClassModel"/>
+                                <parameter type="org.mql.java.models.ProjectModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createRelationElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.RelationModel"/>
                             </parameters>
                         </method>
                         <method modifier="private static" name="createFieldElement" returnType="org.w3c.dom.Element">
@@ -24,37 +30,25 @@
                                 <parameter type="java.lang.String"/>
                             </parameters>
                         </method>
-                        <method modifier="private static" name="createFieldsElement" returnType="org.w3c.dom.Element">
-                            <parameters>
-                                <parameter type="org.w3c.dom.Document"/>
-                                <parameter type="org.mql.java.models.ClassModel"/>
-                            </parameters>
-                        </method>
-                        <method modifier="private static" name="createPackageElement" returnType="org.w3c.dom.Element">
-                            <parameters>
-                                <parameter type="org.w3c.dom.Document"/>
-                                <parameter type="org.mql.java.models.PackageModel"/>
-                            </parameters>
-                        </method>
-                        <method modifier="private static" name="createRootElement" returnType="org.w3c.dom.Element">
-                            <parameters>
-                                <parameter type="org.w3c.dom.Document"/>
-                                <parameter type="org.mql.java.models.ProjectModel"/>
-                            </parameters>
-                        </method>
-                        <method modifier="private static" name="createPackagesElement" returnType="org.w3c.dom.Element">
-                            <parameters>
-                                <parameter type="org.w3c.dom.Document"/>
-                                <parameter type="org.mql.java.models.ProjectModel"/>
-                            </parameters>
-                        </method>
                         <method modifier="private static" name="createMethodsElement" returnType="org.w3c.dom.Element">
                             <parameters>
                                 <parameter type="org.w3c.dom.Document"/>
                                 <parameter type="org.mql.java.models.ClassModel"/>
                             </parameters>
                         </method>
-                        <method modifier="private static" name="createClassesElement" returnType="org.w3c.dom.Element">
+                        <method modifier="private static" name="createClassElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.ClassModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createFieldsElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.ClassModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createRelationsElement" returnType="org.w3c.dom.Element">
                             <parameters>
                                 <parameter type="org.w3c.dom.Document"/>
                                 <parameter type="org.mql.java.models.PackageModel"/>
@@ -66,18 +60,24 @@
                                 <parameter type="org.mql.java.models.MethodeModel"/>
                             </parameters>
                         </method>
+                        <method modifier="private static" name="createClassesElement" returnType="org.w3c.dom.Element">
+                            <parameters>
+                                <parameter type="org.w3c.dom.Document"/>
+                                <parameter type="org.mql.java.models.PackageModel"/>
+                            </parameters>
+                        </method>
                         <method modifier="public static" name="main" returnType="void">
                             <parameters>
                                 <parameter type="java.lang.String[]"/>
                             </parameters>
                         </method>
-                        <method modifier="private static" name="createRelationElement" returnType="org.w3c.dom.Element">
+                        <method modifier="private static" name="createPackagesElement" returnType="org.w3c.dom.Element">
                             <parameters>
                                 <parameter type="org.w3c.dom.Document"/>
-                                <parameter type="org.mql.java.models.RelationModel"/>
+                                <parameter type="org.mql.java.models.ProjectModel"/>
                             </parameters>
                         </method>
-                        <method modifier="private static" name="createRelationsElement" returnType="org.w3c.dom.Element">
+                        <method modifier="private static" name="createPackageElement" returnType="org.w3c.dom.Element">
                             <parameters>
                                 <parameter type="org.w3c.dom.Document"/>
                                 <parameter type="org.mql.java.models.PackageModel"/>
@@ -95,34 +95,16 @@
                         <field modifier="private" name="targetClass" type="java.lang.Class&lt;?&gt;"/>
                     </fields>
                     <methods>
-                        <method modifier="public" name="getSuperClass" returnType="java.lang.String">
-                            <parameters/>
-                        </method>
                         <method modifier="public" name="getFieldsList" returnType="java.util.Set&lt;java.lang.String&gt;">
-                            <parameters/>
-                        </method>
-                        <method modifier="public" name="getFieldList" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
-                            <parameters/>
-                        </method>
-                        <method modifier="public" name="getConstructors" returnType="java.lang.String">
                             <parameters/>
                         </method>
                         <method modifier="public" name="getFieldModels" returnType="void">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getMethodesModels" returnType="void">
+                        <method modifier="public" name="getSuperClass" returnType="java.lang.String">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getFields" returnType="java.lang.String">
-                            <parameters/>
-                        </method>
-                        <method modifier="public" name="getChaineHeritage" returnType="java.lang.String[]">
-                            <parameters/>
-                        </method>
-                        <method modifier="public" name="getClassModel" returnType="void">
-                            <parameters/>
-                        </method>
-                        <method modifier="public" name="getMethodsList" returnType="java.util.Set&lt;java.lang.reflect.Method&gt;">
+                        <method modifier="public" name="getConstructors" returnType="java.lang.String">
                             <parameters/>
                         </method>
                         <method modifier="public" name="getMethodeModifier" returnType="java.lang.String">
@@ -133,22 +115,21 @@
                         <method modifier="public" name="getClassSimpleName" returnType="java.lang.String">
                             <parameters/>
                         </method>
+                        <method modifier="public" name="getFields" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getFieldList" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getChaineHeritage" returnType="java.lang.String[]">
+                            <parameters/>
+                        </method>
                         <method modifier="public" name="getAttributeType" returnType="void">
                             <parameters>
                                 <parameter type="java.lang.reflect.Field"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="getElementType" returnType="java.lang.Class&lt;?&gt;">
-                            <parameters>
-                                <parameter type="java.lang.reflect.Field"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="getFieldModificateur" returnType="java.lang.String">
-                            <parameters>
-                                <parameter type="java.lang.reflect.Field"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="getMethods" returnType="java.lang.String">
+                        <method modifier="public" name="getMethodsList" returnType="java.util.Set&lt;java.lang.reflect.Method&gt;">
                             <parameters/>
                         </method>
                         <method modifier="public" name="getImplementedInterface" returnType="java.lang.String[]">
@@ -156,6 +137,25 @@
                         </method>
                         <method modifier="public" name="getClassModifier" returnType="java.lang.String">
                             <parameters/>
+                        </method>
+                        <method modifier="public" name="getFieldModificateur" returnType="java.lang.String">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getMethodesModels" returnType="void">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getMethods" returnType="java.lang.String">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getClassModel" returnType="void">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getElementType" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
                         </method>
                     </methods>
                 </class>
@@ -173,44 +173,37 @@
                         <field modifier="private" name="implementation" type="java.lang.Class&lt;?&gt;[]"/>
                     </fields>
                     <methods>
-                        <method modifier="public" name="getUtilisationRelations" returnType="java.util.Set&lt;java.lang.reflect.Parameter&gt;">
+                        <method modifier="public" name="getAgregation" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getClassFields" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                        <method modifier="public" name="getTargetClass" returnType="java.lang.Class&lt;?&gt;">
                             <parameters/>
                         </method>
                         <method modifier="public" name="getAssociation" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getAssociationRelations" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                        <method modifier="public" name="getComposition" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getAgregation" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                        <method modifier="public" name="getMethodesParameters" returnType="java.util.Set&lt;java.lang.reflect.Parameter&gt;">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getImplementationInterface" returnType="java.lang.Class&lt;?&gt;[]">
+                        <method modifier="public" name="getUtilisation" returnType="java.util.Set&lt;java.lang.reflect.Parameter&gt;">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="isConstuctorParameter" returnType="boolean">
-                            <parameters>
-                                <parameter type="java.lang.reflect.Field"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="getExensionRelation" returnType="java.lang.Class&lt;?&gt;">
-                            <parameters/>
-                        </method>
-                        <method modifier="public" name="getElementType" returnType="java.lang.Class&lt;?&gt;">
-                            <parameters>
-                                <parameter type="java.lang.reflect.Field"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="getArrayClassFields" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                        <method modifier="public" name="getCompositionRelations" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
                             <parameters/>
                         </method>
                         <method modifier="public" name="getAgregationRelations" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getCompositionRelations" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                        <method modifier="public" name="getUtilisationRelations" returnType="java.util.Set&lt;java.lang.reflect.Parameter&gt;">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getImplementationInterface" returnType="java.lang.Class&lt;?&gt;[]">
+                            <parameters/>
+                        </method>
+                        <method modifier="public" name="getImplementation" returnType="java.lang.Class&lt;?&gt;[]">
                             <parameters/>
                         </method>
                         <method modifier="public" name="getElementType" returnType="java.lang.Class&lt;?&gt;">
@@ -218,12 +211,15 @@
                                 <parameter type="java.lang.reflect.Parameter"/>
                             </parameters>
                         </method>
+                        <method modifier="public" name="getAssociationRelations" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
+                            <parameters/>
+                        </method>
                         <method modifier="public" name="classMemePack" returnType="boolean">
                             <parameters>
                                 <parameter type="java.lang.String"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="getUtilisation" returnType="java.util.Set&lt;java.lang.reflect.Parameter&gt;">
+                        <method modifier="public" name="getArrayClassFields" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
                             <parameters/>
                         </method>
                         <method modifier="public" name="getListClassFields" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
@@ -234,16 +230,20 @@
                                 <parameter type="java.lang.String[]"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="getImplementation" returnType="java.lang.Class&lt;?&gt;[]">
+                        <method modifier="public" name="getExensionRelation" returnType="java.lang.Class&lt;?&gt;">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getMethodesParameters" returnType="java.util.Set&lt;java.lang.reflect.Parameter&gt;">
-                            <parameters/>
+                        <method modifier="public" name="getElementType" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
                         </method>
-                        <method modifier="public" name="getComposition" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
-                            <parameters/>
+                        <method modifier="public" name="isConstuctorParameter" returnType="boolean">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
                         </method>
-                        <method modifier="public" name="getTargetClass" returnType="java.lang.Class&lt;?&gt;">
+                        <method modifier="public" name="getClassFields" returnType="java.util.Set&lt;java.lang.reflect.Field&gt;">
                             <parameters/>
                         </method>
                     </methods>
@@ -258,16 +258,16 @@
                                 <parameter type="java.lang.String[]"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="getClassList" returnType="void">
-                            <parameters>
-                                <parameter type="java.lang.String"/>
-                                <parameter type="java.util.Set"/>
-                            </parameters>
-                        </method>
                         <method modifier="public" name="setPackageModel" returnType="void">
                             <parameters>
                                 <parameter type="java.lang.String"/>
                                 <parameter type="org.mql.java.models.PackageModel"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getClassList" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="java.util.Set"/>
                             </parameters>
                         </method>
                     </methods>
@@ -275,34 +275,10 @@
                 <class name="ProjectExplorer">
                     <fields/>
                     <methods>
-                        <method modifier="public" name="createPackageModel" returnType="org.mql.java.models.PackageModel">
-                            <parameters>
-                                <parameter type="java.lang.String"/>
-                                <parameter type="java.lang.String"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="createClassModel" returnType="java.util.Set&lt;org.mql.java.models.ClassModel&gt;">
-                            <parameters>
-                                <parameter type="java.lang.String"/>
-                                <parameter type="java.lang.String"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="setAgregationModel" returnType="void">
+                        <method modifier="public" name="setUtilisationModel" returnType="void">
                             <parameters>
                                 <parameter type="java.util.Set"/>
                                 <parameter type="java.util.Set"/>
-                                <parameter type="java.lang.String"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="setImplementationModel" returnType="void">
-                            <parameters>
-                                <parameter type="java.lang.Class[]"/>
-                                <parameter type="java.util.Set"/>
-                                <parameter type="java.lang.String"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="exploreProject" returnType="org.mql.java.models.ProjectModel">
-                            <parameters>
                                 <parameter type="java.lang.String"/>
                             </parameters>
                         </method>
@@ -319,14 +295,34 @@
                                 <parameter type="java.util.Set"/>
                             </parameters>
                         </method>
-                        <method modifier="public static" name="main" returnType="void">
-                            <parameters>
-                                <parameter type="java.lang.String[]"/>
-                            </parameters>
-                        </method>
                         <method modifier="public" name="getPackageList" returnType="java.util.Set&lt;java.lang.String&gt;">
                             <parameters>
                                 <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setImplementationModel" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.Class[]"/>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setAgregationModel" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="createPackageModel" returnType="org.mql.java.models.PackageModel">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="main" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String[]"/>
                             </parameters>
                         </method>
                         <method modifier="public" name="createRelationModel" returnType="java.util.Set&lt;org.mql.java.models.RelationModel&gt;">
@@ -336,16 +332,20 @@
                                 <parameter type="java.util.Set"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="setExtentionModel" returnType="void">
+                        <method modifier="public" name="createClassModel" returnType="java.util.Set&lt;org.mql.java.models.ClassModel&gt;">
                             <parameters>
-                                <parameter type="java.lang.Class"/>
-                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
                                 <parameter type="java.lang.String"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="setUtilisationModel" returnType="void">
+                        <method modifier="public" name="exploreProject" returnType="org.mql.java.models.ProjectModel">
                             <parameters>
-                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setExtentionModel" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.Class"/>
                                 <parameter type="java.util.Set"/>
                                 <parameter type="java.lang.String"/>
                             </parameters>
@@ -366,7 +366,7 @@
                         <field modifier="private" name="methods" type="java.util.Set&lt;org.mql.java.models.MethodeModel&gt;"/>
                     </fields>
                     <methods>
-                        <method modifier="public" name="setMethods" returnType="void">
+                        <method modifier="public" name="setFields" returnType="void">
                             <parameters>
                                 <parameter type="java.util.Set"/>
                             </parameters>
@@ -385,9 +385,9 @@
                                 <parameter type="java.lang.String"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="setSimpleName" returnType="void">
+                        <method modifier="public" name="setMethods" returnType="void">
                             <parameters>
-                                <parameter type="java.lang.String"/>
+                                <parameter type="java.util.Set"/>
                             </parameters>
                         </method>
                         <method modifier="public" name="toString" returnType="java.lang.String">
@@ -401,9 +401,9 @@
                         <method modifier="public" name="getSimpleName" returnType="java.lang.String">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="setFields" returnType="void">
+                        <method modifier="public" name="setSimpleName" returnType="void">
                             <parameters>
-                                <parameter type="java.util.Set"/>
+                                <parameter type="java.lang.String"/>
                             </parameters>
                         </method>
                         <method modifier="public" name="getFields" returnType="java.util.Set&lt;org.mql.java.models.FieldModel&gt;">
@@ -426,22 +426,22 @@
                                 <parameter type="java.lang.String"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="setModifier" returnType="void">
+                        <method modifier="public" name="setType" returnType="void">
                             <parameters>
-                                <parameter type="java.lang.String"/>
+                                <parameter type="java.lang.reflect.Type"/>
                             </parameters>
                         </method>
                         <method modifier="public" name="toString" returnType="java.lang.String">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="setIterableOrArray" returnType="void">
+                        <method modifier="public" name="setElementType" returnType="void">
                             <parameters>
-                                <parameter type="boolean"/>
+                                <parameter type="java.lang.Class"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="checkIterableOrArray" returnType="void">
+                        <method modifier="public" name="setGenericType" returnType="void">
                             <parameters>
-                                <parameter type="java.lang.reflect.Field"/>
+                                <parameter type="java.lang.reflect.ParameterizedType"/>
                             </parameters>
                         </method>
                         <method modifier="public" name="getName" returnType="java.lang.String">
@@ -450,32 +450,32 @@
                         <method modifier="public" name="getGenericType" returnType="java.lang.reflect.Type">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getElementType" returnType="java.lang.reflect.Type">
+                        <method modifier="public" name="getModifier" returnType="java.lang.String">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="isIterableOrArray" returnType="boolean">
+                        <method modifier="public" name="getElementType" returnType="java.lang.reflect.Type">
                             <parameters/>
                         </method>
                         <method modifier="public" name="getType" returnType="java.lang.reflect.Type">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="setGenericType" returnType="void">
+                        <method modifier="public" name="setIterableOrArray" returnType="void">
                             <parameters>
-                                <parameter type="java.lang.reflect.ParameterizedType"/>
+                                <parameter type="boolean"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="setElementType" returnType="void">
-                            <parameters>
-                                <parameter type="java.lang.Class"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="setType" returnType="void">
-                            <parameters>
-                                <parameter type="java.lang.reflect.Type"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="getModifier" returnType="java.lang.String">
+                        <method modifier="public" name="isIterableOrArray" returnType="boolean">
                             <parameters/>
+                        </method>
+                        <method modifier="public" name="setModifier" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="checkIterableOrArray" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Field"/>
+                            </parameters>
                         </method>
                     </methods>
                 </class>
@@ -511,7 +511,7 @@
                         <method modifier="public" name="getName" returnType="java.lang.String">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getModifier" returnType="java.lang.String">
+                        <method modifier="public" name="getParameterInfo" returnType="org.mql.java.models.TypeModel[]">
                             <parameters/>
                         </method>
                         <method modifier="public" name="setReturnType" returnType="void">
@@ -519,7 +519,7 @@
                                 <parameter type="java.lang.reflect.Type"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="getParameterInfo" returnType="org.mql.java.models.TypeModel[]">
+                        <method modifier="public" name="getModifier" returnType="java.lang.String">
                             <parameters/>
                         </method>
                     </methods>
@@ -556,7 +556,7 @@
                         <method modifier="public" name="getRelation" returnType="org.mql.java.utils.Relation">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="setRelatedWith" returnType="void">
+                        <method modifier="public" name="setRelatedClass" returnType="void">
                             <parameters>
                                 <parameter type="java.lang.String"/>
                             </parameters>
@@ -564,10 +564,10 @@
                         <method modifier="public" name="toString" returnType="java.lang.String">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getRelatedClass" returnType="java.lang.String">
+                        <method modifier="public" name="getRelatedWith" returnType="java.lang.String">
                             <parameters/>
                         </method>
-                        <method modifier="public" name="getRelatedWith" returnType="java.lang.String">
+                        <method modifier="public" name="getRelatedClass" returnType="java.lang.String">
                             <parameters/>
                         </method>
                         <method modifier="public" name="setRelation" returnType="void">
@@ -575,7 +575,7 @@
                                 <parameter type="org.mql.java.utils.Relation"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="setRelatedClass" returnType="void">
+                        <method modifier="public" name="setRelatedWith" returnType="void">
                             <parameters>
                                 <parameter type="java.lang.String"/>
                             </parameters>
@@ -623,16 +623,16 @@
                                 <parameter type="java.lang.reflect.Type"/>
                             </parameters>
                         </method>
+                        <method modifier="public static" name="genericTypeCastableToClass" returnType="java.lang.Class&lt;?&gt;">
+                            <parameters>
+                                <parameter type="java.lang.reflect.Type"/>
+                            </parameters>
+                        </method>
                         <method modifier="public" name="getElementType" returnType="java.lang.reflect.Type">
                             <parameters/>
                         </method>
                         <method modifier="public" name="isIterableOrArray" returnType="boolean">
                             <parameters/>
-                        </method>
-                        <method modifier="public static" name="genericTypeCastableToClass" returnType="java.lang.Class&lt;?&gt;">
-                            <parameters>
-                                <parameter type="java.lang.reflect.Type"/>
-                            </parameters>
                         </method>
                         <method modifier="public" name="setType" returnType="void">
                             <parameters>
@@ -655,16 +655,16 @@
                         <field modifier="private" name="projectName" type="java.lang.String"/>
                     </fields>
                     <methods>
+                        <method modifier="public" name="setRelation" returnType="void">
+                            <parameters>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
                         <method modifier="public" name="getProjectName" returnType="java.lang.String">
                             <parameters/>
                         </method>
                         <method modifier="public" name="getRelation" returnType="java.util.Set&lt;org.mql.java.models.RelationModel&gt;">
                             <parameters/>
-                        </method>
-                        <method modifier="public" name="setRelation" returnType="void">
-                            <parameters>
-                                <parameter type="java.util.Set"/>
-                            </parameters>
                         </method>
                         <method modifier="public" name="setClasses" returnType="void">
                             <parameters>
@@ -684,8 +684,8 @@
                 </class>
             </classes>
             <relations>
-                <relation related-Class="ClassModel" related-With="interface java.util.Set" relation-type="Utilisation"/>
-                <relation related-Class="ClassModel" related-With="interface java.util.Set" relation-type="Utilisation"/>
+                <relation related-Class="ClassModel" related-With="java.util.Set" relation-type="Utilisation"/>
+                <relation related-Class="ClassModel" related-With="java.util.Set" relation-type="Utilisation"/>
             </relations>
         </package>
         <package name="org.mql.java.utils">
@@ -748,6 +748,11 @@
                         <field modifier="private" name="numero" type="int"/>
                     </fields>
                     <methods>
+                        <method modifier="public" name="ajouterLigne" returnType="void">
+                            <parameters>
+                                <parameter type="org.mql.java.examples.LigneFacture"/>
+                            </parameters>
+                        </method>
                         <method modifier="public" name="setNumero" returnType="void">
                             <parameters>
                                 <parameter type="int"/>
@@ -756,11 +761,6 @@
                         <method modifier="public" name="setDate" returnType="void">
                             <parameters>
                                 <parameter type="java.lang.String"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="ajouterLigne" returnType="void">
-                            <parameters>
-                                <parameter type="org.mql.java.examples.LigneFacture"/>
                             </parameters>
                         </method>
                     </methods>
@@ -776,9 +776,8 @@
                         <field modifier="private final" name="f" type="org.mql.java.examples.Facture"/>
                     </fields>
                     <methods>
-                        <method modifier="public" name="ajouterProduits3" returnType="java.util.Set&lt;org.mql.java.examples.Commande&gt;">
+                        <method modifier="public" name="ajouterProduits1" returnType="void">
                             <parameters>
-                                <parameter type="java.lang.String[]"/>
                                 <parameter type="java.util.Vector"/>
                             </parameters>
                         </method>
@@ -787,19 +786,9 @@
                                 <parameter type="org.mql.java.examples.Produit[]"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="setNumero" returnType="void">
+                        <method modifier="public" name="setDate" returnType="void">
                             <parameters>
-                                <parameter type="int"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="ajouterProduits2" returnType="void">
-                            <parameters>
-                                <parameter type="java.util.Set"/>
-                            </parameters>
-                        </method>
-                        <method modifier="public" name="ajouterProduits1" returnType="void">
-                            <parameters>
-                                <parameter type="java.util.Vector"/>
+                                <parameter type="java.lang.String"/>
                             </parameters>
                         </method>
                         <method modifier="public" name="ajouterProduits" returnType="void">
@@ -807,9 +796,20 @@
                                 <parameter type="java.util.Vector"/>
                             </parameters>
                         </method>
-                        <method modifier="public" name="setDate" returnType="void">
+                        <method modifier="public" name="ajouterProduits2" returnType="void">
                             <parameters>
-                                <parameter type="java.lang.String"/>
+                                <parameter type="java.util.Set"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="ajouterProduits3" returnType="java.util.Set&lt;org.mql.java.examples.Commande&gt;">
+                            <parameters>
+                                <parameter type="java.lang.String[]"/>
+                                <parameter type="java.util.Vector"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setNumero" returnType="void">
+                            <parameters>
+                                <parameter type="int"/>
                             </parameters>
                         </method>
                     </methods>
@@ -820,14 +820,14 @@
                         <field modifier="private" name="reference" type="java.lang.String"/>
                     </fields>
                     <methods>
-                        <method modifier="public" name="setReference" returnType="void">
-                            <parameters>
-                                <parameter type="java.lang.String"/>
-                            </parameters>
-                        </method>
                         <method modifier="public" name="setPrix" returnType="void">
                             <parameters>
                                 <parameter type="double"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setReference" returnType="void">
+                            <parameters>
+                                <parameter type="java.lang.String"/>
                             </parameters>
                         </method>
                     </methods>
@@ -869,7 +869,7 @@
                 </class>
             </classes>
             <relations>
-                <relation related-Class="Facture" related-With="class org.mql.java.examples.LigneFacture" relation-type="Utilisation"/>
+                <relation related-Class="Facture" related-With="org.mql.java.examples.LigneFacture" relation-type="Utilisation"/>
                 <relation related-Class="Facture" related-With="I1" relation-type="Implementation"/>
             </relations>
         </package>

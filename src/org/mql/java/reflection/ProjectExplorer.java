@@ -45,7 +45,6 @@ public class ProjectExplorer {
 	}
 
 	public Set<String> getPackageList(String projectDirectory) {
-		// PackageExplorer packageExplorer = new PackageExplorer(projectDirectory);
 		Set<String> packageList = new HashSet<>();
 		listOfPackage(projectDirectory, packageList);
 		return packageList;
@@ -55,10 +54,8 @@ public class ProjectExplorer {
 		PackageModel packageModel = new PackageModel(projectDirectory, packageName);
 		Set<ClassModel> classes = createClassModel(projectDirectory, packageName);
 		Set<RelationModel> relations = createRelationModel(projectDirectory, packageName, classes);
-		// System.out.println(relations);
 		packageModel.setRelation(relations);
 		packageModel.setClasses(classes);
-		// System.out.println(packageModel);
 		return packageModel;
 	}
 
@@ -103,7 +100,6 @@ public class ProjectExplorer {
 					setCompositionModel(composition, relations, c.getSimpleName());
 					setExtentionModel(extention, relations, cls.getSimpleName());
 					setImplementationModel(implementation, relations, c.getSimpleName());
-					// System.out.println(relations);
 					return relations;
 
 				}

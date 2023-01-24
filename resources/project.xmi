@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="ASCII"?>
+<modisco.xml:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modisco.xml="http://www.eclipse.org/MoDisco/Xml/0.1.incubation/XML" name="xs:schema">
+  <children xsi:type="modisco.xml:Text" name="&#xA;    "/>
+  <children xsi:type="modisco.xml:Element" name="xs:element">
+    <children xsi:type="modisco.xml:Attribute" name="name" value="project"/>
+    <children xsi:type="modisco.xml:Text" name="&#xA;        "/>
+    <children xsi:type="modisco.xml:Element" name="xs:complexType">
+      <children xsi:type="modisco.xml:Text" name="&#xA;            "/>
+      <children xsi:type="modisco.xml:Element" name="xs:sequence">
+        <children xsi:type="modisco.xml:Text" name="&#xA;                "/>
+        <children xsi:type="modisco.xml:Element" name="xs:element">
+          <children xsi:type="modisco.xml:Attribute" name="name" value="packages"/>
+          <children xsi:type="modisco.xml:Text" name="&#xA;                    "/>
+          <children xsi:type="modisco.xml:Element" name="xs:complexType">
+            <children xsi:type="modisco.xml:Text" name="&#xA;                        "/>
+            <children xsi:type="modisco.xml:Element" name="xs:sequence">
+              <children xsi:type="modisco.xml:Text" name="&#xA;                            "/>
+              <children xsi:type="modisco.xml:Element" name="xs:element">
+                <children xsi:type="modisco.xml:Attribute" name="name" value="package"/>
+                <children xsi:type="modisco.xml:Attribute" name="maxOccurs" value="unbounded"/>
+                <children xsi:type="modisco.xml:Text" name="&#xA;                                "/>
+                <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                  <children xsi:type="modisco.xml:Text" name="&#xA;                                    "/>
+                  <children xsi:type="modisco.xml:Element" name="xs:sequence">
+                    <children xsi:type="modisco.xml:Text" name="&#xA;                                        "/>
+                    <children xsi:type="modisco.xml:Element" name="xs:element">
+                      <children xsi:type="modisco.xml:Attribute" name="name" value="classes"/>
+                      <children xsi:type="modisco.xml:Text" name="&#xA;                                            "/>
+                      <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                        <children xsi:type="modisco.xml:Text" name="&#xA;                                                "/>
+                        <children xsi:type="modisco.xml:Element" name="xs:choice">
+                          <children xsi:type="modisco.xml:Attribute" name="maxOccurs" value="unbounded"/>
+                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                    "/>
+                          <children xsi:type="modisco.xml:Element" name="xs:element">
+                            <children xsi:type="modisco.xml:Attribute" name="name" value="class"/>
+                            <children xsi:type="modisco.xml:Attribute" name="maxOccurs" value="unbounded"/>
+                            <children xsi:type="modisco.xml:Text" name="&#xA;                                                        "/>
+                            <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                            "/>
+                              <children xsi:type="modisco.xml:Element" name="xs:sequence">
+                                <children xsi:type="modisco.xml:Text" name="&#xA;                                                                "/>
+                                <children xsi:type="modisco.xml:Element" name="xs:element">
+                                  <children xsi:type="modisco.xml:Attribute" name="name" value="fields"/>
+                                  <children xsi:type="modisco.xml:Text" name="&#xA;                                                                    "/>
+                                  <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                                    <children xsi:type="modisco.xml:Text" name="&#xA;                                                                        "/>
+                                    <children xsi:type="modisco.xml:Element" name="xs:sequence">
+                                      <children xsi:type="modisco.xml:Attribute" name="minOccurs" value="0"/>
+                                      <children xsi:type="modisco.xml:Text" name="&#xA;                                                                            "/>
+                                      <children xsi:type="modisco.xml:Element" name="xs:element">
+                                        <children xsi:type="modisco.xml:Attribute" name="name" value="field"/>
+                                        <children xsi:type="modisco.xml:Attribute" name="minOccurs" value="0"/>
+                                        <children xsi:type="modisco.xml:Attribute" name="maxOccurs" value="unbounded"/>
+                                        <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                "/>
+                                        <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                    "/>
+                                          <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                            <children xsi:type="modisco.xml:Attribute" name="name" value="modifier"/>
+                                            <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                                          </children>
+                                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                    "/>
+                                          <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                            <children xsi:type="modisco.xml:Attribute" name="name" value="name"/>
+                                            <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                                          </children>
+                                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                    "/>
+                                          <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                            <children xsi:type="modisco.xml:Attribute" name="name" value="type"/>
+                                            <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                                          </children>
+                                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                "/>
+                                        </children>
+                                        <children xsi:type="modisco.xml:Text" name="&#xA;                                                                            "/>
+                                      </children>
+                                      <children xsi:type="modisco.xml:Text" name="&#xA;                                                                        "/>
+                                    </children>
+                                    <children xsi:type="modisco.xml:Text" name="&#xA;                                                                    "/>
+                                  </children>
+                                  <children xsi:type="modisco.xml:Text" name="&#xA;                                                                "/>
+                                </children>
+                                <children xsi:type="modisco.xml:Text" name="&#xA;                                                                "/>
+                                <children xsi:type="modisco.xml:Element" name="xs:element">
+                                  <children xsi:type="modisco.xml:Attribute" name="name" value="methods"/>
+                                  <children xsi:type="modisco.xml:Text" name="&#xA;                                                                    "/>
+                                  <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                                    <children xsi:type="modisco.xml:Text" name="&#xA;                                                                        "/>
+                                    <children xsi:type="modisco.xml:Element" name="xs:sequence">
+                                      <children xsi:type="modisco.xml:Text" name="&#xA;                                                                            "/>
+                                      <children xsi:type="modisco.xml:Element" name="xs:element">
+                                        <children xsi:type="modisco.xml:Attribute" name="name" value="method"/>
+                                        <children xsi:type="modisco.xml:Attribute" name="maxOccurs" value="unbounded"/>
+                                        <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                "/>
+                                        <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                    "/>
+                                          <children xsi:type="modisco.xml:Element" name="xs:sequence">
+                                            <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                        "/>
+                                            <children xsi:type="modisco.xml:Element" name="xs:element">
+                                              <children xsi:type="modisco.xml:Attribute" name="name" value="parameters"/>
+                                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                            "/>
+                                              <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                                                <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                                "/>
+                                                <children xsi:type="modisco.xml:Element" name="xs:sequence">
+                                                  <children xsi:type="modisco.xml:Attribute" name="minOccurs" value="0"/>
+                                                  <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                                    "/>
+                                                  <children xsi:type="modisco.xml:Element" name="xs:element">
+                                                    <children xsi:type="modisco.xml:Attribute" name="name" value="parameter"/>
+                                                    <children xsi:type="modisco.xml:Attribute" name="minOccurs" value="0"/>
+                                                    <children xsi:type="modisco.xml:Attribute" name="maxOccurs" value="unbounded"/>
+                                                    <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                                        "/>
+                                                    <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                                                      <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                                            "/>
+                                                      <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                                        <children xsi:type="modisco.xml:Attribute" name="name" value="type"/>
+                                                        <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                                                      </children>
+                                                      <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                                        "/>
+                                                    </children>
+                                                    <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                                    "/>
+                                                  </children>
+                                                  <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                                "/>
+                                                </children>
+                                                <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                            "/>
+                                              </children>
+                                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                        "/>
+                                            </children>
+                                            <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                    "/>
+                                          </children>
+                                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                    "/>
+                                          <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                            <children xsi:type="modisco.xml:Attribute" name="name" value="modifier"/>
+                                            <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                                          </children>
+                                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                    "/>
+                                          <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                            <children xsi:type="modisco.xml:Attribute" name="name" value="name"/>
+                                            <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                                          </children>
+                                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                    "/>
+                                          <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                            <children xsi:type="modisco.xml:Attribute" name="name" value="returnType"/>
+                                            <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                                          </children>
+                                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                                                "/>
+                                        </children>
+                                        <children xsi:type="modisco.xml:Text" name="&#xA;                                                                            "/>
+                                      </children>
+                                      <children xsi:type="modisco.xml:Text" name="&#xA;                                                                        "/>
+                                    </children>
+                                    <children xsi:type="modisco.xml:Text" name="&#xA;                                                                    "/>
+                                  </children>
+                                  <children xsi:type="modisco.xml:Text" name="&#xA;                                                                "/>
+                                </children>
+                                <children xsi:type="modisco.xml:Text" name="&#xA;                                                            "/>
+                              </children>
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                            "/>
+                              <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                <children xsi:type="modisco.xml:Attribute" name="name" value="name"/>
+                                <children xsi:type="modisco.xml:Attribute" name="type" value="xs:ID"/>
+                                <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                              </children>
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                        "/>
+                            </children>
+                            <children xsi:type="modisco.xml:Text" name="&#xA;                                                    "/>
+                          </children>
+                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                    "/>
+                          <children xsi:type="modisco.xml:Element" name="xs:element">
+                            <children xsi:type="modisco.xml:Attribute" name="name" value="interface"/>
+                            <children xsi:type="modisco.xml:Attribute" name="minOccurs" value="0"/>
+                            <children xsi:type="modisco.xml:Text" name="&#xA;                                                        "/>
+                            <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                            "/>
+                              <children xsi:type="modisco.xml:Element" name="xs:sequence">
+                                <children xsi:type="modisco.xml:Text" name="&#xA;                                                                "/>
+                                <children xsi:type="modisco.xml:Element" name="xs:element">
+                                  <children xsi:type="modisco.xml:Attribute" name="name" value="fields"/>
+                                </children>
+                                <children xsi:type="modisco.xml:Text" name="&#xA;                                                                "/>
+                                <children xsi:type="modisco.xml:Element" name="xs:element">
+                                  <children xsi:type="modisco.xml:Attribute" name="name" value="methods"/>
+                                </children>
+                                <children xsi:type="modisco.xml:Text" name="&#xA;                                                            "/>
+                              </children>
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                            "/>
+                              <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                <children xsi:type="modisco.xml:Attribute" name="name" value="name"/>
+                                <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                              </children>
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                        "/>
+                            </children>
+                            <children xsi:type="modisco.xml:Text" name="&#xA;                                                    "/>
+                          </children>
+                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                "/>
+                        </children>
+                        <children xsi:type="modisco.xml:Text" name="&#xA;                                            "/>
+                      </children>
+                      <children xsi:type="modisco.xml:Text" name="&#xA;                                        "/>
+                    </children>
+                    <children xsi:type="modisco.xml:Text" name="&#xA;                                        "/>
+                    <children xsi:type="modisco.xml:Element" name="xs:element">
+                      <children xsi:type="modisco.xml:Attribute" name="name" value="relations"/>
+                      <children xsi:type="modisco.xml:Text" name="&#xA;                                            "/>
+                      <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                        <children xsi:type="modisco.xml:Text" name="&#xA;                                                "/>
+                        <children xsi:type="modisco.xml:Element" name="xs:sequence">
+                          <children xsi:type="modisco.xml:Attribute" name="minOccurs" value="0"/>
+                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                    "/>
+                          <children xsi:type="modisco.xml:Element" name="xs:element">
+                            <children xsi:type="modisco.xml:Attribute" name="name" value="relation"/>
+                            <children xsi:type="modisco.xml:Attribute" name="minOccurs" value="0"/>
+                            <children xsi:type="modisco.xml:Attribute" name="maxOccurs" value="unbounded"/>
+                            <children xsi:type="modisco.xml:Text" name="&#xA;                                                        "/>
+                            <children xsi:type="modisco.xml:Element" name="xs:complexType">
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                            "/>
+                              <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                <children xsi:type="modisco.xml:Attribute" name="name" value="related-Class"/>
+                                <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                              </children>
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                            "/>
+                              <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                <children xsi:type="modisco.xml:Attribute" name="name" value="related-With"/>
+                                <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                              </children>
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                            "/>
+                              <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                                <children xsi:type="modisco.xml:Attribute" name="name" value="relation-type"/>
+                                <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                              </children>
+                              <children xsi:type="modisco.xml:Text" name="&#xA;                                                        "/>
+                            </children>
+                            <children xsi:type="modisco.xml:Text" name="&#xA;                                                    "/>
+                          </children>
+                          <children xsi:type="modisco.xml:Text" name="&#xA;                                                "/>
+                        </children>
+                        <children xsi:type="modisco.xml:Text" name="&#xA;                                            "/>
+                      </children>
+                      <children xsi:type="modisco.xml:Text" name="&#xA;                                        "/>
+                    </children>
+                    <children xsi:type="modisco.xml:Text" name="&#xA;                                    "/>
+                  </children>
+                  <children xsi:type="modisco.xml:Text" name="&#xA;                                    "/>
+                  <children xsi:type="modisco.xml:Element" name="xs:attribute">
+                    <children xsi:type="modisco.xml:Attribute" name="name" value="name"/>
+                    <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+                  </children>
+                  <children xsi:type="modisco.xml:Text" name="&#xA;                                "/>
+                </children>
+                <children xsi:type="modisco.xml:Text" name="&#xA;                            "/>
+              </children>
+              <children xsi:type="modisco.xml:Text" name="&#xA;                        "/>
+            </children>
+            <children xsi:type="modisco.xml:Text" name="&#xA;                    "/>
+          </children>
+          <children xsi:type="modisco.xml:Text" name="&#xA;                "/>
+        </children>
+        <children xsi:type="modisco.xml:Text" name="&#xA;            "/>
+      </children>
+      <children xsi:type="modisco.xml:Text" name="&#xA;            "/>
+      <children xsi:type="modisco.xml:Element" name="xs:attribute">
+        <children xsi:type="modisco.xml:Attribute" name="name" value="name"/>
+        <children xsi:type="modisco.xml:Attribute" name="use" value="required"/>
+      </children>
+      <children xsi:type="modisco.xml:Text" name="&#xA;        "/>
+    </children>
+    <children xsi:type="modisco.xml:Text" name="&#xA;    "/>
+  </children>
+  <children xsi:type="modisco.xml:Text" name="&#xA;"/>
+  <namespaces name="xs" value="http://www.w3.org/2001/XMLSchema"/>
+</modisco.xml:Root>
